@@ -57,7 +57,8 @@ Ouvrir **<http://localhost:8080>** : pas de mot de passe. Arrêter : `Ctrl+C` da
 ## C · Dans le navigateur, avec GitHub Codespaces
 
 Sur la page GitHub du dépôt : *Code › Codespaces › Create codespace on main*. L'installation se lance seule
-(5 min), puis l'interface s'ouvre dans un onglet (sinon : onglet *Ports*, ligne 8080, icône globe).
+(5 min). Airflow démarre ensuite dans un terminal du Codespace : laissez-le ouvert. L'interface s'ouvre dans
+un onglet ; sinon : onglet *Ports*, ligne 8080, icône globe. Pas de mot de passe.
 Les fichiers se modifient directement dans l'éditeur du Codespace. Un compte GitHub gratuit suffit (heures incluses).
 
 ## Vérifier que tout marche
