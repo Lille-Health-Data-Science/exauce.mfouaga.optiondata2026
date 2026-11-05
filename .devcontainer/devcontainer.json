@@ -1,0 +1,9 @@
+{
+  "name": "Airflow 3.3.2 · M2 Data Science en santé",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "hostRequirements": { "cpus": 2, "memory": "8gb" },
+  "postCreateCommand": "bash scripts/installer_sans_docker.sh",
+  "postStartCommand": "bash -c 'nohup bash scripts/lancer_sans_docker.sh > airflow.log 2>&1 &'",
+  "forwardPorts": [8080],
+  "portsAttributes": { "8080": { "label": "Interface Airflow", "onAutoForward": "openBrowser" } }
+}

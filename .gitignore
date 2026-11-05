@@ -1,0 +1,8 @@
+logs/*
+!logs/.gitkeep
+donnees/*
+!donnees/.gitkeep
+.airflow/
+.venv/
+__pycache__/
+airflow.log
