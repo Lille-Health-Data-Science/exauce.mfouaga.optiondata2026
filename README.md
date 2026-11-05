@@ -1,10 +1,17 @@
 # TD Airflow · M2 Data Science en santé
 
 Séance 2 de l'option Data (Université de Lille) : **samedi 7 novembre 2026, 8 h – 12 h**.
-Ce dossier installe **Airflow 3.3.2** et son interface sur votre ordinateur.
+Ce dossier installe **Airflow 3.3.2** et son interface sur votre ordinateur, et contient les fichiers de la séance.
+Le déroulé pas à pas du TD est dans **[TD.md](TD.md)**.
 
-> **À faire avant samedi, chez vous** (30 min environ, avec une bonne connexion : 2 Go à télécharger).
-> Le Wi-Fi de la salle ne suffira pas pour l'installation de 30 personnes en même temps.
+> L'installation se fait **en début de séance**, pendant l'introduction (10 à 20 minutes).
+> Avec 30 personnes sur le même Wi-Fi, choisissez la voie la plus légère pour votre situation :
+>
+> | Votre situation | Voie | À télécharger |
+> |---|---|---|
+> | Docker Desktop déjà installé | A · Docker | environ 1 Go |
+> | macOS ou Linux, sans Docker | B · Sans Docker | environ 150 Mo |
+> | Windows sans Docker | C · Codespaces | rien (tout se passe chez GitHub) |
 
 ## Ce qu'il faut
 
@@ -15,10 +22,9 @@ Ce dossier installe **Airflow 3.3.2** et son interface sur votre ordinateur.
   cd td-airflow-sante
   ```
 
-Trois façons d'installer. Prenez la **A** si vous pouvez ; la **B** si Docker ne s'installe pas ou si votre
-ordinateur a moins de 8 Go ; la **C** en dernier recours.
+Si une voie bloque plus de 10 minutes, passez à la C : elle ne dépend pas de votre ordinateur.
 
-## A · Avec Docker (Windows, macOS, Linux) — recommandé
+## A · Avec Docker (Windows, macOS, Linux)
 
 1. Installer **Docker Desktop** : <https://www.docker.com/products/docker-desktop/>
    - Windows : accepter l'activation de **WSL 2** proposée par l'installeur, puis redémarrer.
@@ -48,10 +54,11 @@ bash scripts/lancer_sans_docker.sh      # à chaque fois ; laisser ce terminal o
 
 Ouvrir **<http://localhost:8080>** : pas de mot de passe. Arrêter : `Ctrl+C` dans le terminal.
 
-## C · Dans le navigateur, avec GitHub Codespaces (dernier recours)
+## C · Dans le navigateur, avec GitHub Codespaces
 
 Sur la page GitHub du dépôt : *Code › Codespaces › Create codespace on main*. L'installation se lance seule
-(5 min), puis l'interface s'ouvre dans un onglet. Compte GitHub étudiant conseillé (heures gratuites incluses).
+(5 min), puis l'interface s'ouvre dans un onglet (sinon : onglet *Ports*, ligne 8080, icône globe).
+Les fichiers se modifient directement dans l'éditeur du Codespace. Un compte GitHub gratuit suffit (heures incluses).
 
 ## Vérifier que tout marche
 
@@ -63,7 +70,7 @@ Sur la page GitHub du dépôt : *Code › Codespaces › Create codespace on mai
 La dernière tâche teste aussi l'accès au serveur FHIR de la séance 1 ; si le réseau le bloque, elle reste verte
 et l'écrit dans son journal.
 
-**Samedi matin, lancez Airflow avant 8 h** (`docker compose up -d` ou `bash scripts/lancer_sans_docker.sh`).
+Ensuite, suivez **[TD.md](TD.md)**.
 
 ## En cas de problème
 
@@ -83,7 +90,8 @@ et l'écrit dans son journal.
 | `docker-compose.yaml` | Fichier officiel d'Airflow 3.3.2, 4 modifications repérées « M2 DSS » |
 | `Dockerfile`, `requirements.txt` | Image Airflow + pandas, Pandera, DuckDB pour les TP |
 | `dags/` | Les DAG lus par Airflow ; au départ, seulement `00_verification.py` |
-| `exercices/` | Fichiers de la séance (exercice 1, TP) : **ne pas les copier dans `dags/` avant le cours** |
-| `donnees/` | Fichiers produits par les DAG, partagés avec Airflow |
+| `TD.md` | Déroulé de la séance, avec ce qu'on doit voir à chaque étape |
+| `exercices/` | Fichiers de la séance (exercice 1, planification, cas d'usage FHIR), à copier dans `dags/` au fil du TD |
+| `donnees/` | Fichiers produits par les DAG, partagés avec Airflow ; `donnees/exemple/` : glycémies de la séance 1, pour travailler sans réseau |
 | `scripts/` | Installation sans Docker (plan B) |
 | `.devcontainer/` | Configuration GitHub Codespaces (plan C) |
