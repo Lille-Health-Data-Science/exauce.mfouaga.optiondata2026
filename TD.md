@@ -83,6 +83,5 @@ Avec la source fichier, on attend 684 ressources, 20 lignes rejetées (sans vale
   l'alerte s'ajoute à `donnees/alertes.log`.
 
 ### En retard ?
-À 11 h 50, l'enseignant publie le corrigé dans le dépôt : `git pull`, puis
-copier `exercices/corrige/fhir_glycemies_quotidien.py` dans `dags/` (il remplace le vôtre) et relancer.
-Pas de Git ? Télécharger le dépôt à nouveau depuis GitHub (*Code › Download ZIP*).
+Lancez au moins le DAG avec `source` = **fichier** : les étapes qui manquent s'affichent en rouge avec leur numéro.
+À 11 h 50, l'enseignant projette et commente le corrigé ; il vous le transmet ensuite.
