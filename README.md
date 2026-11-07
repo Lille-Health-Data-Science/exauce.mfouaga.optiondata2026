@@ -57,7 +57,10 @@ Ouvrir **<http://localhost:8080>** : pas de mot de passe. Arrêter : `Ctrl+C` da
 ## C · Dans le navigateur, avec GitHub Codespaces
 
 Sur la page GitHub du dépôt : *Code › Codespaces › Create codespace on main*. L'installation se lance seule
-(5 min). Airflow démarre ensuite dans un terminal du Codespace : laissez-le ouvert. L'interface s'ouvre dans
+(5 min). **Si l'éditeur demande « Faites-vous confiance aux auteurs des fichiers de ce dossier ? », cliquez sur
+« Approuver le dossier et continuer »** : en mode restreint, ni le terminal ni Airflow ne démarrent.
+Airflow démarre ensuite dans un terminal du Codespace : laissez-le ouvert. S'il n'a pas démarré, ouvrez un
+terminal (*Terminal › New Terminal*) et lancez `bash scripts/lancer_sans_docker.sh`. L'interface s'ouvre dans
 un onglet ; sinon : onglet *Ports*, ligne 8080, icône globe. Pas de mot de passe.
 Les fichiers se modifient directement dans l'éditeur du Codespace. Un compte GitHub gratuit suffit (heures incluses).
 
@@ -82,6 +85,7 @@ Ensuite, suivez **[TD.md](TD.md)**.
 | `Permission denied` sur `logs/` (Linux) | Mettre votre identifiant dans `.env` (commande `sed` de l'étape A.1), puis `docker compose up airflow-init`. |
 | Le DAG n'apparaît pas | Attendre 30 secondes ; une erreur d'import s'affiche en haut de la liste des DAG. |
 | Plan B : erreur au clic sur **Trigger** | La base SQLite était occupée : réessayer quelques secondes plus tard. |
+| Codespaces : l'interface ne s'ouvre pas | Approuver le dossier (bannière « mode Restreint » en haut), puis `bash scripts/lancer_sans_docker.sh` dans un terminal ; adresse : onglet *Ports*, ligne 8080 |
 | Autre chose | Apporter une capture d'écran samedi, ou écrire à l'enseignant avant. |
 
 ## Contenu du dossier
