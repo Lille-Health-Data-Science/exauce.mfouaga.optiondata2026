@@ -1,7 +1,7 @@
 """TP séance 2 · Cas d'usage : le flux FHIR quotidien des glycémies.
 
 extraire (API FHIR, pagination) → aplatir (Parquet) → valider (Pandera) → charger (DuckDB, idempotent)
-Le guide pas à pas est dans TD.md (partie 3).
+Le guide pas à pas est dans TD.md (partie 04).
 
 Avant de commencer :
   - copier ce fichier dans dags/ ;
@@ -17,7 +17,7 @@ from airflow.sdk import Asset, Param, dag, task
 from airflow.timetables.trigger import CronTriggerTimetable
 
 DONNEES = Path(__file__).resolve().parents[1] / "donnees"
-BASE = os.environ.get("FHIR_BASE", "https://hapi.fhir.org/baseR4")   # étape 5 : mettre une mauvaise URL
+BASE = os.environ.get("FHIR_BASE", "https://hapi.fhir.org/baseR4")   # panne volontaire (TD.md, 4.4) : mettre une mauvaise URL
 UNITES = ["g/L", "mg/dL", "mmol/L"]
 EXEMPLE = DONNEES / "exemple" / "glycemies_exemple.ndjson"     # repli sans réseau (données de la séance 1)
 glycemies = Asset("glycemies")
