@@ -5,7 +5,7 @@
     "cpus": 2,
     "memory": "8gb"
   },
-  "postCreateCommand": "bash scripts/installer_sans_docker.sh",
+  "postCreateCommand": "bash scripts/installer_sans_docker.sh && echo 'source /workspaces/td-airflow-sante/scripts/env.sh' >> ~/.bashrc",
   "forwardPorts": [
     8080
   ],

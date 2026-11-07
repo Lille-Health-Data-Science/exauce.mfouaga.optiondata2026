@@ -3,8 +3,7 @@
 # Usage, depuis le dossier td-airflow-sante :  bash scripts/rafraichir.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
-export AIRFLOW_HOME="$PWD/.airflow"
-export AIRFLOW__CORE__DAGS_FOLDER="$PWD/dags"
-export AIRFLOW__CORE__LOAD_EXAMPLES=False
-.venv/bin/airflow dags reserialize
-.venv/bin/airflow dags list-import-errors
+source scripts/env.sh
+airflow dags reserialize >/dev/null 2>&1 && echo "Dossier dags/ relu : rechargez la page d'Airflow."
+echo "Erreurs d'import (« No data found » = aucune) :"
+airflow dags list-import-errors 2>/dev/null
