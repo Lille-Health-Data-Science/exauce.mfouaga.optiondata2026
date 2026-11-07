@@ -2,7 +2,7 @@
 
 Séance 2 de l'option Data (Université de Lille) : **samedi 7 novembre 2026, 8 h – 12 h**.
 Ce dossier installe **Airflow 3.3.2** et son interface sur votre ordinateur, et contient les fichiers de la séance.
-Le déroulé pas à pas du TD est dans **[TD.md](TD.md)**.
+Le déroulé pas à pas du TD est dans **[TD.md](TD.md)**, les slides du cours dans **[supports/02-airflow.pdf](supports/02-airflow.pdf)**.
 
 > L'installation se fait **en début de séance**, pendant l'introduction (10 à 20 minutes).
 > Avec 30 personnes sur le même Wi-Fi, choisissez la voie la plus légère pour votre situation :
@@ -96,6 +96,7 @@ Ensuite, suivez **[TD.md](TD.md)**.
 | `Dockerfile`, `requirements.txt` | Image Airflow + pandas, Pandera, DuckDB pour les TP |
 | `dags/` | Les DAG lus par Airflow ; au départ, seulement `00_verification.py` |
 | `TD.md` | Déroulé de la séance, avec ce qu'on doit voir à chaque étape |
+| `supports/02-airflow.pdf` | Les slides du cours (69 slides) |
 | `exercices/` | Fichiers de la séance (exercice 1, planification, cas d'usage FHIR), à copier dans `dags/` au fil du TD |
 | `donnees/` | Fichiers produits par les DAG, partagés avec Airflow ; `donnees/exemple/` : glycémies de la séance 1, pour travailler sans réseau |
 | `scripts/` | Installation sans Docker (plan B) |
