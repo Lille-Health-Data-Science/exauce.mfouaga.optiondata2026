@@ -15,5 +15,6 @@ export PATH="$PWD/.venv/bin:$PATH"        # standalone relance la commande airfl
 export AIRFLOW_HOME="$PWD/.airflow"
 export AIRFLOW__CORE__DAGS_FOLDER="$PWD/dags"
 export AIRFLOW__CORE__LOAD_EXAMPLES=False
+export AIRFLOW__DAG_PROCESSOR__REFRESH_INTERVAL=30     # nouveaux DAG visibles en 30 s (300 s par défaut)
 export AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
 exec airflow standalone

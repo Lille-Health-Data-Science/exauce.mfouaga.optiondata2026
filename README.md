@@ -83,7 +83,7 @@ Ensuite, suivez **[TD.md](TD.md)**.
 | `port is already allocated` ou `address already in use` (8080) | Un autre Airflow tourne déjà : `docker compose down`, ou fermer l'autre terminal ; sinon redémarrer l'ordinateur. |
 | `Not enough memory available for Docker` | Docker Desktop › *Settings › Resources* : 4 Go ou plus. |
 | `Permission denied` sur `logs/` (Linux) | Mettre votre identifiant dans `.env` (commande `sed` de l'étape A.1), puis `docker compose up airflow-init`. |
-| Le DAG n'apparaît pas | Attendre 30 secondes ; une erreur d'import s'affiche en haut de la liste des DAG. |
+| Le DAG n'apparaît pas | Attendre 30 secondes ; une erreur d'import s'affiche en haut de la liste des DAG. Pour forcer la relecture : `docker compose exec airflow-dag-processor airflow dags reserialize` (voie A) ou `bash scripts/rafraichir.sh` (voies B et C). |
 | Plan B : erreur au clic sur **Trigger** | La base SQLite était occupée : réessayer quelques secondes plus tard. |
 | Codespaces : l'interface ne s'ouvre pas | Approuver le dossier (bannière « mode Restreint » en haut), puis `bash scripts/lancer_sans_docker.sh` dans un terminal ; adresse : onglet *Ports*, ligne 8080 |
 | Autre chose | Apporter une capture d'écran samedi, ou écrire à l'enseignant avant. |
